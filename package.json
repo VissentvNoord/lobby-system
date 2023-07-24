@@ -1,0 +1,11 @@
+{
+    "name": "com.vincent.lobby-system",
+    "version": "1.0.0",
+    "displayName": "Vincent Lobby System",
+    "description": "A basic lobby system that can be used to quickly test and adapt to any type of multiplayer game.",
+    "unity": "2022.3",
+    "author": {
+        "name": "Vincent van Noord",
+        "email": "noordstudiosofficial@gmail.com"
+    }
+}
