@@ -1,5 +1,6 @@
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
+using Vincent.LobbySystem;
 using UnityEngine;
 
 public class LobbyUpdater
@@ -58,7 +59,7 @@ public class LobbyUpdater
             manager.SetJoinedLobby(lobby);
 
             //Updating the lobby
-            manager.UpdateLobby();
+            manager.RefreshLobby();
 
             //Debug.Log($"Updated joined lobby {lobby.Name} at {Time.realtimeSinceStartup}");
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
+using Vincent.LobbySystem.UI;
 
 public class LobbyUIManager : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class LobbyUIManager : MonoBehaviour
     private void Start()
     {
         currentLobbyUI = FindAnyObjectByType<LobbyUIBase>();
-        currentLobbyUI.gameObject.SetActive(false); 
+        currentLobbyUI.OnStart();
     }
 
     public void ClearList()
@@ -44,7 +45,7 @@ public class LobbyUIManager : MonoBehaviour
         currentLobbyCode.text = code;
     }
 
-    public void DisplayLobby(Lobby lobby)
+    public void DisplayLobby(Lobby lobby, bool isHost = false)
     {
         //Checking if null; return error.
         if(currentLobbyUI == null)
@@ -53,6 +54,6 @@ public class LobbyUIManager : MonoBehaviour
             return;
         }
 
-        currentLobbyUI.DisplayLobbyData(lobby.Name, lobby.Players.Count, lobby.MaxPlayers, lobby.Players.ToArray());
+        currentLobbyUI.DisplayLobbyData(lobby.Name, lobby.Players.Count, lobby.MaxPlayers, lobby.Players.ToArray(), isHost);
     }
 }

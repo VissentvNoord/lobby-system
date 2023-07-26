@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Services;
 using UnityEngine;
+using Vincent.LobbySystem;
 
 public class AuthenticateUI : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class AuthenticateUI : MonoBehaviour
         playerName.text = name; 
     }
 
-    public void GetRandomPlayerName()
+    public void SetPlayerName()
     {
         SetPlayerNameUI(LobbyManager.Instance.GetLocalPlayerName());
     }
