@@ -29,6 +29,8 @@ namespace Vincent.LobbySystem
         public const string RELAY_KEY = "RELAY_KEY";
         public const string PLAYER_NAME_KEY = "PlayerName";
 
+        public int PlayerCount { get; private set; }
+
         private void Awake()
         {
             Instance = this;
@@ -107,6 +109,7 @@ namespace Vincent.LobbySystem
         public async void RefreshLobby()
         {
             UI.DisplayLobby(joinedLobby);
+            PlayerCount = joinedLobby.Players.Count;
 
             if (joinedLobby.Data[RELAY_KEY].Value != "0")
             {
